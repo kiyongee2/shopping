@@ -417,6 +417,11 @@
   .product-info .product-buttons{
     flex-direction: column;
   }
+  .add-product form,
+  .signin form,
+  .signup form{
+    width: 100%;
+  }
   .add-product label,
   .signin label,
   .signup label{
