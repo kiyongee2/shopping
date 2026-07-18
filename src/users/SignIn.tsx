@@ -10,7 +10,7 @@ interface SignInForm{
 
 // 로그인 Props 객체 정의
 interface SignInProps{
-    onLogin: (username: string) => void;
+    onLogin: (username: string, role: string) => void;
 }
 
 
@@ -51,7 +51,7 @@ const SignIn = ({onLogin}: SignInProps) => {
 
         if(matched){
             setLoginResult("success");
-            onLogin(username);  //부모 컴포넌트에 알림
+            onLogin(matched.username, matched.role);  //부모 컴포넌트에 로그인 성공 알림
             alert("로그인 되었습니다.");
             navigate('/');  //로그인 성공후 메인 페이지로 이동
         }else{

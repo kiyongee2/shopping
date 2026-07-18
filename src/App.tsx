@@ -9,24 +9,30 @@ import AddProduct from './products/AddProduct'
 import SignIn from './users/SignIn'
 import { useState } from 'react'
 import SignUp from './users/SignUp'
+import DashBoard from './users/DashBoard'
 
 function App() {
   //로그인 상태 관리
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-  // 로그인한 회원의 상태 관리(null-로그아웃 시)
+  // 로그인한 사용자의 ID 상태 관리(null-로그아웃 시)
   const [userId, setUserId] = useState<string | null>(null);
 
+  // 로그인한 사용자 권한 관리
+  const [userRole, setUserRole] = useState<string | null>(null);
+
   // 로그인 핸들러 함수
-  const handleLogin = (username: string) => {
+  const handleLogin = (username: string, role: string) => {
     setIsLoggedIn(true);
     setUserId(username);
+    setUserRole(role);
   }
 
   // 로그아웃 핸들러 함수
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUserId(null);
+    setUserRole(null);
   }
 
   return (
@@ -36,6 +42,7 @@ function App() {
           <Header 
             isLoggedIn={isLoggedIn}
             userId={userId}
+            userRole={userRole}
             onLogout={handleLogout}
           />
           <Routes>
@@ -45,6 +52,7 @@ function App() {
             <Route path='/products/add' element={<AddProduct />} />
             <Route path='/signin' element={<SignIn onLogin={handleLogin} />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/dashboard' element={<DashBoard userRole={userRole} />} />
           </Routes>
         </BrowserRouter>
       </section>
