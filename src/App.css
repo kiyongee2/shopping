@@ -367,5 +367,62 @@
   font-weight: bold;
 }
 
+/* 해상도에 따라 최적화 */
+/* 768px 이하 - 태블릿 기준 */
+@media (max-width: 768px) {
+  .notice-popup{
+    left: 50%;
+    top: 20px;
+    /* 애니메이션: x좌표 이동 */
+    transform: translateX(-50%);
+  }
+  .header{
+    height: auto;  /* 가변크기 변경 */
+  }
+  .header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 12px;
+    padding: 8px 0;
+  }
+  .product-list,
+  .product-info,
+  .add-product,
+  .signin, .signup{
+    width: 90%;
+  }
+  .product-list .card-container{
+    justify-content: center;
+  }
+  .product-details{
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+/* 480px 이하 - 스마트폰 세로 크기 */
+@media (max-width: 480px) {
+  .notice-popup{
+    top: 12px;
+    padding: 12px;
+  }
+  .notice-popup h3{font-size: 18px;}
+  .notice-popup p{font-size: 14px;}
+  .search-area input{
+    max-width: 300px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  .product-info .product-buttons{
+    flex-direction: column;
+  }
+  .order-table th,
+  .order-table td{
+    padding: 8px;
+    font-size: 14px;
+  }
+}
 
 
