@@ -1,3 +1,39 @@
+/* Main 스타일 */
+.main{
+  margin-top: 40px;
+}
+.main h2{
+  font-size: 28px;
+  color: #e91263;
+}
+.main-img{margin-top: 20px;}
+
+/* 공지 팝업 스타일 */
+.notice-popup{
+  position: fixed;
+  left: 300px;
+  top: 150px;
+  background-color: #fff;
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  /* 그림자 - x축크기 y축크기 번짐정도 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.notice-popup h3{color:  #e91263;}
+.notice-popup p{
+  margin-bottom: 20px;
+  color: #444;
+}
+.notice-popup button{
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e91263;
+  color: #eee;
+  cursor: pointer;
+}
+
 /* Header style */
 .header{
   height: 60px;
