@@ -390,8 +390,7 @@
   .product-info,
   .add-product,
   .signin, .signup{
-    width: 100%;
-    text-align: center;
+    width: 90%;
   }
   .product-list .card-container{
     justify-content: center;
@@ -417,6 +416,23 @@
   }
   .product-info .product-buttons{
     flex-direction: column;
+  }
+  .add-product form,
+  .signin form,
+  .signup form{
+    width: 100%;
+  }
+  .add-product label,
+  .signin label,
+  .signup label{
+    width: 100px;
+    font-size: 14px;
+  }
+  .add-product input,
+  .add-product textarea,
+  .signin input,
+  .signup input{
+    width: 80%;
   }
   .order-table th,
   .order-table td{
