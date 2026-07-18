@@ -17,7 +17,12 @@ const Header = ({isLoggedIn, userId, userRole,
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/products'>상품목록</NavLink>
-                <NavLink to='/products/add'>상품등록</NavLink>
+                <NavLink to='/products/add' onClick={(e) => {
+                    if(userRole !== "admin"){
+                        e.preventDefault();
+                        alert("관리자 전용 메뉴입니다.");
+                    }
+                }}>상품등록</NavLink>
                 {userRole === "admin" && 
                     <NavLink to='/dashboard'>관리자</NavLink>}
                 {isLoggedIn ? (

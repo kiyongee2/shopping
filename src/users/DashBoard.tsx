@@ -1,14 +1,7 @@
 
-import { useNavigate } from "react-router-dom";
 import orders from "../data/orders.json"
 
-//Props 타입 정의
-interface DashBoardProps{
-    userRole: string | null,
-}
-
-const DashBoard = ({userRole}: DashBoardProps) => {
-    const navigate = useNavigate();
+const DashBoard = () => {
 
     return(
         <div>

@@ -52,7 +52,7 @@ function App() {
             <Route path='/products/add' element={<AddProduct />} />
             <Route path='/signin' element={<SignIn onLogin={handleLogin} />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/dashboard' element={<DashBoard userRole={userRole} />} />
+            <Route path='/dashboard' element={<DashBoard />} />
           </Routes>
         </BrowserRouter>
       </section>
